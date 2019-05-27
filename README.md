@@ -1,6 +1,5 @@
 # dwm
-sav0's fork of the suckless dynamic window manager (dwm)
-<small>[suckless dwm](https://dwm.suckless.org/)</small>
+sav0's fork of the suckless dynamic window manager [(dwm)](https://dwm.suckless.org/)
 
 ## Keybindings
 - `Super + Shift + [Enter]` : spawn a terminal [st](https://github.com/jsav0/st)
@@ -16,7 +15,7 @@ sav0's fork of the suckless dynamic window manager (dwm)
   - this patch adds an extra layout mode to dwm called **grid** 
   - `Super + g` : set grid mode
 - [Fullgaps](https://dwm.suckless.org/patches/fullgaps/)
-  - this patch adds gaps inner and outer gaps to windows 
+  - this patch adds inner and outer gaps to client windows 
   - `Super + [-]` : decrease gaps 
   - `Super + [=]` : increase gaps
   - `Super + Shift + [=]` : sets gaps to zero
