@@ -1,5 +1,5 @@
 # dwm
-sav0's fork of the suckless dynamic window manager [(dwm)](https://dwm.suckless.org/)
+savage's fork of the suckless dynamic window manager [(dwm)](https://dwm.suckless.org/)
 
 ## Keybindings
 - `Super + Shift + [Enter]` : spawn a terminal [st](https://github.com/jsav0/st)
