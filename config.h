@@ -48,6 +48,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define MMOD (Mod4Mask|ShiftMask)
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -61,6 +62,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *connectwifi[]  = { "/bin/sh", "-c", "dmenu_wifi.sh", NULL };
+static const char *screenrecord[]  = { "/bin/sh", "-c", "dmenu_record-screen.sh", NULL };
+static const char *killrecording[]  = { "/bin/sh", "-c", "dmenu_record-screen.sh kill", NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -91,6 +96,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	{ MODKEY|ShiftMask,		XK_w,	   spawn,	   {.v = connectwifi } }, /* js */
+	{ MODKEY,			XK_r,	   spawn,	   {.v = screenrecord } }, /* js */
+	{ MODKEY|ShiftMask,		XK_r,	   spawn,	   {.v = killrecording } }, /* js */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
