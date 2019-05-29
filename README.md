@@ -9,7 +9,7 @@ savage's fork of the suckless dynamic window manager [(dwm)](https://dwm.suckles
 - ... etc
 
 ## Other Keybindings (with dmenu interaction)
-- `Super + Shift + w` : connect to nearby hotspots [dmenu_wifi.sh](https://github.com/jsav0/dmenu-scripts)
+- `Super + Shift + w` : connect to wireless networks [dmenu_wifi.sh](https://github.com/jsav0/dmenu-scripts)
 - `Super + r` : starts screen recording [dmenu_record-screen.sh](https://github.com/jsav0/dmenu-scripts)
 - `Super + Shift + r` : stops screen recording [dmenu-record-screen.sh](https://github.com/jsav0/dmenu-scripts)
 
