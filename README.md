@@ -1,18 +1,12 @@
 # dwm
-savage's fork of the suckless dynamic window manager [(dwm)](https://dwm.suckless.org/)
+sav0's fork of the suckless dynamic window manager [(dwm)](https://dwm.suckless.org/)
 
-## General Keybindings
+## Keybindings
 - `Super + Shift + [Enter]` : spawn a terminal [st](https://github.com/jsav0/st)
 - `Super + p` : open dmenu
 - `Super + Shift + c` : close window
 - `Super + Shift + q` : quit dwm
 - ... etc
-
-## Other Keybindings (with dmenu interaction)
-- `Super + Shift + w` : connect to wireless networks [dmenu_wifi.sh](https://github.com/jsav0/dmenu-scripts)
-- `Super + r` : starts screen recording [dmenu_record-screen.sh](https://github.com/jsav0/dmenu-scripts)
-- `Super + Shift + r` : stops screen recording [dmenu-record-screen.sh](https://github.com/jsav0/dmenu-scripts)
-
 
 ## Patches (dwm updated to 6.2)
 - [Fancybar](https://dwm.suckless.org/patches/fancybar/)

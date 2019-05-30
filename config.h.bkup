@@ -62,12 +62,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *slockcmd[]  = { "slock", NULL };
-static const char *dunstcmd[]  = { "redunst.sh", NULL };
-static const char *screenrecord[]  = { "dmenu_record_screen.sh", NULL };
-static const char *killrecording[]  = { "/bin/sh", "-c", "dmenu_record_screen.sh kill", NULL };
 static const char *connectwifi[]  = { "/bin/sh", "-c", "sudo dmenu_wifi.sh", NULL };
-static const char *usbmount[]  = { "/bin/sh", "-c", "sudo usbmount.sh", NULL };
+static const char *screenrecord[]  = { "/bin/sh", "-c", "dmenu_record-screen.sh", NULL };
+static const char *killrecording[]  = { "/bin/sh", "-c", "dmenu_record-screen.sh kill", NULL };
 
 
 static Key keys[] = {
@@ -77,17 +74,17 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_x,      incnmaster,     {.i = +1 } }, /* js */
-	{ MODKEY,                       XK_c,      incnmaster,     {.i = -1 } }, /* js */
-	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_z, 	   zoom,           {0} }, /* js */
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_F1,     setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_F2,     setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_F3,     setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_F4,     setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -96,15 +93,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } }, /* decrease gaps */
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } }, /* increase gaps */
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } }, /* gaps to 0 */
-	{ MODKEY|ShiftMask,		XK_w,	   spawn,	   {.v = connectwifi } }, /* -js */ 
-	{ MODKEY,			XK_r,	   spawn,	   {.v = screenrecord } }, /* -js */
-	{ MODKEY|ShiftMask,		XK_r,	   spawn,	   {.v = killrecording } }, /* -js */
-	{ MODKEY,			XK_l,	   spawn,	   {.v = slockcmd } }, /* -js */
-	{ MODKEY,			XK_d,	   spawn,	   {.v = dunstcmd } }, /* -js */
-	{ MODKEY,			XK_u,	   spawn,	   {.v = usbmount } }, /* -js */
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	{ MODKEY|ShiftMask,		XK_w,	   spawn,	   {.v = connectwifi } }, /* js */
+	{ MODKEY,			XK_r,	   spawn,	   {.v = screenrecord } }, /* js */
+	{ MODKEY|ShiftMask,		XK_r,	   spawn,	   {.v = killrecording } }, /* js */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
