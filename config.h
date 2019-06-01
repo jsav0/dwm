@@ -67,14 +67,14 @@ static const char *dunstcmd[]  = { "redunst.sh", NULL };
 static const char *screenrecord[]  = { "dmenu_record_screen.sh", NULL };
 static const char *killrecording[]  = { "/bin/sh", "-c", "dmenu_record_screen.sh kill", NULL };
 static const char *connectwifi[]  = { "/bin/sh", "-c", "sudo dmenu_wifi.sh", NULL };
-static const char *usbmount[]  = { "/bin/sh", "-c", "sudo usbmount.sh", NULL };
+static const char *mountusb[]  = { "/bin/sh", "-c", "sudo dmenu_mountusb.sh", NULL };
 
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_b,      togglebar,      {0} }, 
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_x,      incnmaster,     {.i = +1 } }, /* js */
@@ -104,7 +104,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_r,	   spawn,	   {.v = killrecording } }, /* -js */
 	{ MODKEY,			XK_l,	   spawn,	   {.v = slockcmd } }, /* -js */
 	{ MODKEY,			XK_d,	   spawn,	   {.v = dunstcmd } }, /* -js */
-	{ MODKEY,			XK_u,	   spawn,	   {.v = usbmount } }, /* -js */
+	{ MODKEY|ShiftMask,		XK_u,	   spawn,	   {.v = mountusb } }, /* -js */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
