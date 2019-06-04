@@ -1,7 +1,7 @@
 #!/bin/bash
 # savage
 # simple script to mount usb drives
-# via dmenu
+# using dmenu
 # -- requires root privs (or sudo)
 
 #set -x # debugging

@@ -1,9 +1,10 @@
 #!/bin/sh
 # savage
-# toggle screen recording on/off
-# using interaction with dmenu
-# dependencies: ffmpeg
+# screen recording utility
+# using ffmpeg and dmenu
 
+#set -x #debugging
+#exec > $HOME/dmenu_screencord.logo 2>&1 #debugging
 
 prompt() { \
 	choice=$(printf "region\nscreen\nkill" |dmenu -p "Select recording style: ")

@@ -40,12 +40,14 @@ install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	cp -f scripts/dmenu_mountusb.sh ${DESTDIR}${PREFIX}/bin
-	cp -f scripts/dmenu_record_screen.sh ${DESTDIR}${PREFIX}/bin
+	cp -f scripts/dmenu_screenrecord.sh ${DESTDIR}${PREFIX}/bin
 	cp -f scripts/dmenu_wifi.sh ${DESTDIR}${PREFIX}/bin
+	cp -f scripts/dmenu_unicode_symbols.sh ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_mountusb.sh
-	chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_record_screen.sh
+	chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_screenrecord.sh
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_wifi.sh
+	chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_unicode_symbols.sh
 	mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1

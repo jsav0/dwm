@@ -64,10 +64,11 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *dunstcmd[]  = { "redunst.sh", NULL };
-static const char *screenrecord[]  = { "dmenu_record_screen.sh", NULL };
-static const char *killrecording[]  = { "/bin/sh", "-c", "dmenu_record_screen.sh kill", NULL };
+static const char *screenrecord[]  = { "dmenu_screenrecord.sh", NULL };
+static const char *killrecording[]  = { "/bin/sh", "-c", "dmenu_screenrecord.sh kill", NULL };
 static const char *connectwifi[]  = { "/bin/sh", "-c", "sudo dmenu_wifi.sh", NULL };
 static const char *mountusb[]  = { "/bin/sh", "-c", "sudo dmenu_mountusb.sh", NULL };
+static const char *unicodesymbols[]  = { "dmenu_unicode_symbols.sh", NULL };
 
 
 static Key keys[] = {
@@ -105,6 +106,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_l,	   spawn,	   {.v = slockcmd } }, /* -js */
 	{ MODKEY,			XK_d,	   spawn,	   {.v = dunstcmd } }, /* -js */
 	{ MODKEY|ShiftMask,		XK_u,	   spawn,	   {.v = mountusb } }, /* -js */
+	{ MODKEY|ShiftMask,		XK_F12,	   spawn,	   {.v = unicodesymbols } }, /* -js */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
