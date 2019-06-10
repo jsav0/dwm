@@ -4,7 +4,7 @@
 # using ffmpeg and dmenu
 
 #set -x #debugging
-#exec > $HOME/dmenu_screencord.logo 2>&1 #debugging
+#exec > $HOME/dmenu_screen.logo 2>&1 #debugging
 
 prompt() { \
 	choice=$(printf "region\nscreen\nkill" |dmenu -p "Select recording style: ")
